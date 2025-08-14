@@ -1,0 +1,2103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courage School: David's Way</title>
+    <meta name="description" content="Courage grows at human speed. A 7-session journey through David's story to build authentic courage.">
+    <meta name="theme-color" content="#1e40af">
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQ291cmFnZSBTY2hvb2w6IERhdmlkJ3MgV2F5Iiwic2hvcnRfbmFtZSI6IkNvdXJhZ2UgU2Nob29sIiwic3RhcnRfdXJsIjoiLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwidGhlbWVfY29sb3IiOiIjMWU0MGFmIiwiYmFja2dyb3VuZF9jb2xvciI6IiMwZjE3MmEifQ==">
+    
+    <style>
+        :root {
+            --primary-blue: #1e40af;
+            --primary-gold: #d97706;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border-subtle: #334155;
+            --accent-warm: #f59e0b;
+            --success-green: #10b981;
+            --courage-purple: #7c3aed;
+            --gentle-teal: #14b8a6;
+            --healing-rose: #f43f5e;
+            --transition-smooth: all 240ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        .screen {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        /* Typography */
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-5xl { font-size: 3rem; }
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        .font-medium { font-weight: 500; }
+
+        /* Layout */
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        .text-center { text-align: center; }
+        .relative { position: relative; }
+
+        /* Spacing */
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-6 { margin-top: 1.5rem; }
+        .mt-8 { margin-top: 2rem; }
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+
+        /* Button Styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            line-height: 1;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--courage-purple), #6366f1);
+            color: white;
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .btn-secondary:hover {
+            background: #334155;
+            border-color: #475569;
+        }
+
+        .btn-gentle {
+            background: linear-gradient(135deg, var(--gentle-teal), #06b6d4);
+            color: white;
+        }
+
+        .btn-gentle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(20, 184, 166, 0.3);
+        }
+
+        .btn-healing {
+            background: linear-gradient(135deg, var(--healing-rose), #ec4899);
+            color: white;
+        }
+
+        .btn-healing:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(244, 63, 94, 0.3);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            border: 1px solid var(--border-subtle);
+            padding: 2rem;
+            transition: var(--transition-smooth);
+        }
+
+        .card:hover {
+            border-color: #475569;
+            transform: translateY(-2px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-gentle {
+            background: rgba(20, 184, 166, 0.1);
+            border-color: rgba(20, 184, 166, 0.3);
+        }
+
+        .card-courage {
+            background: rgba(124, 58, 237, 0.1);
+            border-color: rgba(124, 58, 237, 0.3);
+        }
+
+        .card-healing {
+            background: rgba(244, 63, 94, 0.1);
+            border-color: rgba(244, 63, 94, 0.3);
+        }
+
+        /* Splash Screen */
+        .splash-screen {
+            background: linear-gradient(135deg, #0f172a 0%, #7c3aed 50%, #0f172a 100%);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .splash-bg-pattern {
+            position: absolute;
+            inset: 0;
+            opacity: 0.1;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .splash-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .splash-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .splash-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .splash-subtitle {
+            font-size: 1.5rem;
+            color: #cbd5e1;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .loading-spinner {
+            width: 2rem;
+            height: 2rem;
+            border: 2px solid var(--courage-purple);
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        /* Hero Screen */
+        .hero-screen {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-icon {
+            font-size: 6rem;
+            margin-bottom: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-description {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Session Overview */
+        .sessions-overview {
+            background: var(--dark-bg);
+            padding: 3rem 0;
+        }
+
+        .sessions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .session-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .session-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border-color: var(--courage-purple);
+        }
+
+        .session-card.completed {
+            border-color: var(--success-green);
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .session-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--courage-purple);
+            margin-bottom: 1rem;
+        }
+
+        .session-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .session-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .session-duration {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .session-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background: var(--success-green);
+            transition: width 0.8s ease;
+        }
+
+        /* Session Content */
+        .session-screen {
+            background: var(--dark-bg);
+            padding: 2rem 0;
+            min-height: 100vh;
+        }
+
+        .session-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .session-title-main {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .session-hook {
+            font-size: 1.25rem;
+            color: var(--courage-purple);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border-subtle);
+            transition: var(--transition-smooth);
+        }
+
+        .progress-dot.active {
+            background: var(--courage-purple);
+            transform: scale(1.2);
+        }
+
+        .progress-dot.completed {
+            background: var(--success-green);
+        }
+
+        /* Module Styles */
+        .module {
+            margin-bottom: 3rem;
+        }
+
+        .module-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .module-icon {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .module-icon.verse-context {
+            background: linear-gradient(135deg, var(--primary-gold), var(--accent-warm));
+        }
+
+        .module-icon.gentle-activity {
+            background: linear-gradient(135deg, var(--gentle-teal), #06b6d4);
+        }
+
+        .module-icon.depression-companion {
+            background: linear-gradient(135deg, var(--healing-rose), #ec4899);
+        }
+
+        .module-icon.action-card {
+            background: linear-gradient(135deg, var(--courage-purple), #6366f1);
+        }
+
+        .module-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .module-content {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* Verse Context Module */
+        .verse-display {
+            background: rgba(217, 119, 6, 0.1);
+            border-left: 4px solid var(--primary-gold);
+            padding: 2rem;
+            border-radius: 0 0.75rem 0.75rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .verse-text {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .verse-reference {
+            font-weight: 600;
+            color: var(--primary-gold);
+            font-size: 1rem;
+        }
+
+        .context-explanation {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-top: 1.5rem;
+        }
+
+        /* Gentle Activity Module */
+        .activity-container {
+            background: rgba(20, 184, 166, 0.05);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            border: 1px solid rgba(20, 184, 166, 0.2);
+        }
+
+        .activity-prompt {
+            font-size: 1.125rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .activity-input {
+            width: 100%;
+            min-height: 120px;
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            line-height: 1.6;
+            resize: vertical;
+        }
+
+        .activity-input:focus {
+            outline: none;
+            border-color: var(--gentle-teal);
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+        }
+
+        .activity-suggestions {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Depression Companion Module */
+        .companion-container {
+            background: rgba(244, 63, 94, 0.05);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            border: 1px solid rgba(244, 63, 94, 0.2);
+        }
+
+        .companion-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .companion-tab {
+            background: rgba(244, 63, 94, 0.1);
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .companion-tab.active {
+            background: var(--healing-rose);
+            color: white;
+            border-color: var(--healing-rose);
+        }
+
+        .companion-content {
+            display: none;
+        }
+
+        .companion-content.active {
+            display: block;
+        }
+
+        .breath-prayer {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .breath-circle {
+            width: 150px;
+            height: 150px;
+            border: 3px solid var(--healing-rose);
+            border-radius: 50%;
+            margin: 0 auto 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.125rem;
+            color: var(--healing-rose);
+            font-weight: 600;
+            animation: breathe 4s ease-in-out infinite;
+        }
+
+        .breath-instructions {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .gratitude-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .gratitude-step {
+            background: rgba(244, 63, 94, 0.1);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            border-left: 4px solid var(--healing-rose);
+        }
+
+        .step-number {
+            font-weight: 700;
+            color: var(--healing-rose);
+            margin-bottom: 0.5rem;
+        }
+
+        .affirmation-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .affirmation {
+            background: rgba(244, 63, 94, 0.1);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(244, 63, 94, 0.2);
+        }
+
+        .affirmation-text {
+            font-size: 1.125rem;
+            color: var(--text-primary);
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .affirmation-reference {
+            font-size: 0.9rem;
+            color: var(--healing-rose);
+            font-weight: 500;
+        }
+
+        /* Action Card Module */
+        .action-card-container {
+            background: rgba(124, 58, 237, 0.05);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
+
+        .action-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--courage-purple);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .action-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .action-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .action-step {
+            background: rgba(124, 58, 237, 0.1);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            border-left: 4px solid var(--courage-purple);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .action-step-number {
+            background: var(--courage-purple);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .action-step-text {
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Audio Controls */
+        .audio-controls {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .audio-btn {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            transition: var(--transition-smooth);
+            font-size: 1.25rem;
+        }
+
+        .audio-btn:hover {
+            background: var(--border-subtle);
+        }
+
+        .audio-btn.active {
+            color: var(--courage-purple);
+        }
+
+        /* Teacher Mode */
+        .teacher-screen {
+            background: var(--dark-bg);
+            padding: 2rem 0;
+        }
+
+        .teacher-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .resource-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(15, 23, 42, 0.95);
+            border-top: 1px solid var(--border-subtle);
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-main {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-link:hover {
+            color: var(--accent-warm);
+        }
+
+        .footer-donation {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .donate-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .donate-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Safety Notice */
+        .safety-notice {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .safety-title {
+            font-weight: 600;
+            color: #fca5a5;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Navigation */
+        .session-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 1rem;
+            border: 1px solid var(--border-subtle);
+        }
+
+        /* CTA Screen */
+        .cta-screen {
+            background: linear-gradient(135deg, #0f172a 0%, #7c3aed 50%, #0f172a 100%);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-message {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .splash-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .sessions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .teacher-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .audio-controls {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-bottom: 2rem;
+                justify-content: center;
+            }
+
+            .session-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .companion-tabs {
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .session-title-main {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio Element for Background Music -->
+    <audio id="backgroundAudio" loop>
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DvwGceAC2Ly+zOeC0FGGq+7fCmWxkAK4PL8N1+QAoTXbXq7KpEDAlMreSss2QdAzGN0O/EdS0FMY7N7cyBOhISZLDp7ZYOCR1Wud7vrVoUD0yg4OzAtGICLYLJ8OCAOwgcYb/w2n9BAgsWYrzt8KJMDwpPp+TmqmkeAjGL0e7McC0FP47R8cqGNAkNW7np7KROCwtIqdvrs2QPBzKF0fDJeCkFNXzI7d19OwgYXbfl6qNUBwd/yuLytWILIYLN8N6EPQgWZ7fv6ZZBBB9Wwd3rplceA0ar4+uxbSMEMHrJ8N5+OwgYZLPx4aFGCQNLqODpqmge" type="audio/wav">
+    </audio>
+
+    <!-- Audio Elements for Narration -->
+    <audio id="prayerAudio">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DvwGceAC2Ly+zOeC0FGGq+7fCmWxkAK4PL8N1+QAoTXbXq7KpEDAlMreSss2QdAzGN0O/EdS0FMY7N7cyBOhISZLDp7ZYOCR1Wud7vrVoUD0yg4OzAtGICLYLJ8OCAOwgcYb/w2n9BAgsWYrzt8KJMDwpPp+TmqmkeAjGL0e7McC0FP47R8cqGNAkNW7np7KROCwtIqdvrs2QPBzKF0fDJeCkFNXzI7d19OwgYXbfl6qNUBwd/yuLytWILIYLN8N6EPQgWZ7fv6ZZBBB9Wwd3rplceA0ar4+uxbSMEMHrJ8N5+OwgYZLPx4aFGCQNLqODpqmge" type="audio/wav">
+    </audio>
+
+    <!-- Audio Controls -->
+    <div class="audio-controls">
+        <button class="audio-btn" id="musicToggle" title="Toggle Music">🎵</button>
+        <button class="audio-btn" id="narrationToggle" title="Toggle Narration">🎤</button>
+        <input type="range" id="volumeControl" min="0" max="100" value="30" title="Volume" style="width: 80px;">
+    </div>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="screen splash-screen">
+        <div class="splash-bg-pattern"></div>
+        <div class="splash-content">
+            <div class="splash-icon">🛡️</div>
+            <h1 class="splash-title">Courage School</h1>
+            <p class="splash-subtitle">David's Way</p>
+            <div class="mt-8">
+                <div class="loading-spinner"></div>
+                <p class="mt-4 text-secondary">Building courage at human speed...</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-main">Made by Justin — Depths to the Heights</div>
+            <div class="footer-links">
+                <a href="https://depthstoheights.org" class="footer-link">Website</a>
+                <a href="mailto:depthstoheights@gmail.com" class="footer-link">Email</a>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=8GRE7B8C3TP2U" class="footer-link">Donate</a>
+            </div>
+            <div class="footer-donation">
+                <strong>Free to use.</strong> If this encouraged you, feel free to 
+                <a href="https://www.paypal.com/donate/?hosted_button_id=8GRE7B8C3TP2U" class="donate-link">buy me a coffee</a> 
+                to support more projects — <em>Made by Justin, Depths to the Heights</em>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Screen -->
+    <div id="hero-screen" class="screen hero-screen hidden">
+        <div class="hero-content">
+            <div class="hero-icon">🌱</div>
+            <h1 class="hero-title">Courage grows at human speed</h1>
+            <p class="hero-description">
+                Join David's journey from shepherd to king. Discover how God builds authentic courage through 
+                real struggles, genuine fears, and faithful steps forward. Seven sessions of gentle growth.
+            </p>
+            <button class="btn btn-primary" onclick="startCourageSchool()">
+                Begin Your Journey 🚶‍♂️
+            </button>
+        </div>
+    </div>
+
+    <!-- Sessions Overview Screen -->
+    <div id="sessions-overview-screen" class="screen sessions-overview hidden">
+        <div class="container">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Seven Sessions with David</h2>
+                <p class="text-xl text-secondary mb-4">Each session builds on the last, like courage itself</p>
+                <p class="text-muted">Total journey: 150 minutes • Best taken over 7 days</p>
+            </div>
+
+            <div class="sessions-grid">
+                <div class="session-card" onclick="startSession(1)" data-session="1">
+                    <div class="session-number">01</div>
+                    <h3 class="session-title">The Shepherd's Call</h3>
+                    <p class="session-description">
+                        When God calls you from the ordinary into the extraordinary. 
+                        David learns that courage begins with trusting God's voice.
+                    </p>
+                    <div class="session-duration">
+                        <span>⏱️</span>
+                        <span>20-25 minutes</span>
+                    </div>
+                    <div class="session-progress" style="width: 0%"></div>
+                </div>
+
+                <div class="session-card" onclick="startSession(2)" data-session="2">
+                    <div class="session-number">02</div>
+                    <h3 class="session-title">Facing the Giant</h3>
+                    <p class="session-description">
+                        Standing before Goliath. How to move forward when fear feels bigger than faith. 
+                        God's power in our weakness.
+                    </p>
+                    <div class="session-duration">
+                        <span>⏱️</span>
+                        <span>25-30 minutes</span>
+                    </div>
+                    <div class="session-progress" style="width: 0%"></div>
+                </div>
+
+                <div class="session-card" onclick="startSession(3)" data-session="3">
+                    <div class="session-number">03</div>
+                    <h3 class="session-title">Running from Saul</h3>
+                    <p class="session-description">
+                        When life becomes unsafe. Courage during persecution, betrayal, 
+                        and seasons of hiding. God's protection in darkness.
+                    </p>
+                    <div class="session-duration">
+                        <span>⏱️</span>
+                        <span>20-25 minutes</span>
+                    </div>
+                    <div class="session-progress" style="width: 0%"></div>
+                </div>
+
+                <div class="session-card" onclick="startSession(4)" data-session="4">
+                    <div class="session-number">04</div>
+                    <h3 class="session-title">Sparing an Enemy</h3>
+                    <p class="session-description">
+                        The courage to show mercy when you have power to harm. 
+                        David's choice in the cave reveals heart-level courage.
+                    </p>
+                    <div class="session-duration">
+                        <span>⏱️</span>
+                        <span>20-25 minutes</span>
+                    </div>
+                    <div class="session-progress" style="width: 0%"></div>
+                </div>
+
+                <div class="session-card" onclick="startSession(5)" data-session="5">
+                    <div class="session-number">05</div>
+                    <h3 class="session-title">Losing Everything</h3>
+                    <p class="session-description">
+                        When David's city is burned and his men turn against him. 
+                        Finding strength in God when all support fails.
+                    </p>
+                    <div class="session-duration">
+                        <span>⏱️</span>
+                        <span>25-30 minutes</span>
+                    </div>
+                    <div class="session-progress" style="width: 0%"></div>
+                </div>
+
+                <div class="session-card" onclick="startSession(6)" data-session="6">
+                    <div class="session-number">06</div>
+                    <h3 class="session-title">Becoming King</h3>
+                    <p class="session-description">
+                        The courage to step into your calling. David's coronation 
+                        and the responsibility of leadership. When God opens doors.
+                    </p>
+                    <div class="session-duration">
+                        <span>⏱️</span>
+                        <span>20-25 minutes</span>
+                    </div>
+                    <div class="session-progress" style="width: 0%"></div>
+                </div>
+
+                <div class="session-card" onclick="startSession(7)" data-session="7">
+                    <div class="session-number">07</div>
+                    <h3 class="session-title">The Courage to Confess</h3>
+                    <p class="session-description">
+                        David's greatest act of courage: facing his own sin. 
+                        The strength to be honest with God and others.
+                    </p>
+                    <div class="session-duration">
+                        <span>⏱️</span>
+                        <span>25-30 minutes</span>
+                    </div>
+                    <div class="session-progress" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <button class="btn btn-secondary" onclick="showTeacherMode()">
+                    📚 Teacher Resources
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Session Content Screen -->
+    <div id="session-screen" class="screen session-screen hidden">
+        <div class="container">
+            <!-- Session Header -->
+            <div class="session-header">
+                <h1 class="session-title-main" id="sessionTitleMain">Loading Session...</h1>
+                <p class="session-hook">Courage grows at human speed.</p>
+                <div class="progress-indicator" id="progressIndicator">
+                    <!-- Progress dots will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Module 1: Verse & Context -->
+            <div class="module" id="verseModule">
+                <div class="module-header">
+                    <div class="module-icon verse-context">📖</div>
+                    <h2 class="module-title">Scripture & Context</h2>
+                </div>
+                <div class="module-content">
+                    <div class="verse-display">
+                        <div class="verse-text" id="verseText">Loading verse...</div>
+                        <div class="verse-reference" id="verseReference">Loading reference...</div>
+                    </div>
+                    <div class="context-explanation" id="contextExplanation">
+                        Loading context...
+                    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-secondary" id="playVerseAudio" onclick="playVerseNarration()">
+                            🎤 Listen to Reading
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 2: Gentle Activity -->
+            <div class="module" id="activityModule">
+                <div class="module-header">
+                    <div class="module-icon gentle-activity">💭</div>
+                    <h2 class="module-title">Gentle Reflection</h2>
+                </div>
+                <div class="module-content">
+                    <div class="activity-container">
+                        <div class="activity-prompt" id="activityPrompt">Loading activity...</div>
+                        <textarea class="activity-input" id="activityInput" placeholder="Take your time. There's no wrong answer."></textarea>
+                        <div class="activity-suggestions" id="activitySuggestions">Loading suggestions...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 3: Depression Companion -->
+            <div class="module" id="companionModule">
+                <div class="module-header">
+                    <div class="module-icon depression-companion">💝</div>
+                    <h2 class="module-title">Healing Companion</h2>
+                </div>
+                <div class="module-content">
+                    <div class="companion-container">
+                        <div class="companion-tabs">
+                            <button class="companion-tab active" onclick="showCompanionTab('breath')">Breath Prayer</button>
+                            <button class="companion-tab" onclick="showCompanionTab('gratitude')">Gratitude Step</button>
+                            <button class="companion-tab" onclick="showCompanionTab('affirmations')">Scripture Affirmations</button>
+                        </div>
+
+                        <!-- Breath Prayer -->
+                        <div class="companion-content active" id="breathContent">
+                            <div class="breath-prayer">
+                                <div class="breath-circle">Breathe</div>
+                                <div class="breath-instructions">
+                                    Breathe in: "God, give me courage"<br>
+                                    Breathe out: "I trust in You"
+                                </div>
+                                <button class="btn btn-healing" onclick="startBreathPrayer()">Start 2-Minute Prayer</button>
+                            </div>
+                        </div>
+
+                        <!-- Gratitude Step -->
+                        <div class="companion-content" id="gratitudeContent">
+                            <div class="gratitude-steps">
+                                <div class="gratitude-step">
+                                    <div class="step-number">1.</div>
+                                    <div>Name one small thing you're grateful for right now</div>
+                                </div>
+                                <div class="gratitude-step">
+                                    <div class="step-number">2.</div>
+                                    <div>Notice how God showed up in your day, even in tiny ways</div>
+                                </div>
+                                <div class="gratitude-step">
+                                    <div class="step-number">3.</div>
+                                    <div>Thank Him for one strength He's given you</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Scripture Affirmations -->
+                        <div class="companion-content" id="affirmationsContent">
+                            <div class="affirmation-list">
+                                <div class="affirmation">
+                                    <div class="affirmation-text">"The Lord your God is with you, the Mighty Warrior who saves."</div>
+                                    <div class="affirmation-reference">Zephaniah 3:17</div>
+                                </div>
+                                <div class="affirmation">
+                                    <div class="affirmation-text">"Be strong and courageous. Do not be afraid; do not be discouraged."</div>
+                                    <div class="affirmation-reference">Joshua 1:9</div>
+                                </div>
+                                <div class="affirmation">
+                                    <div class="affirmation-text">"God has not given you a spirit of fear, but of power, love and sound mind."</div>
+                                    <div class="affirmation-reference">2 Timothy 1:7</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 4: Action Card -->
+            <div class="module" id="actionModule">
+                <div class="module-header">
+                    <div class="module-icon action-card">⚡</div>
+                    <h2 class="module-title">This Week's Courage Step</h2>
+                </div>
+                <div class="module-content">
+                    <div class="action-card-container">
+                        <div class="action-title" id="actionTitle">Loading action...</div>
+                        <div class="action-description" id="actionDescription">Loading description...</div>
+                        <div class="action-steps" id="actionSteps">
+                            <!-- Steps will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Session Navigation -->
+            <div class="session-nav">
+                <button class="btn btn-secondary" onclick="goBackToOverview()">← Sessions Overview</button>
+                <div class="flex items-center gap-4">
+                    <button class="btn btn-gentle" id="prevSessionBtn" onclick="previousSession()">← Previous</button>
+                    <button class="btn btn-primary" id="nextSessionBtn" onclick="nextSession()">Next Session →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Teacher Mode Screen -->
+    <div id="teacher-screen" class="screen teacher-screen hidden">
+        <div class="container">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-bold mb-4">Instructor Resources</h2>
+                <p class="text-xl text-secondary">Comprehensive materials for leading Courage School groups</p>
+            </div>
+
+            <div class="teacher-grid">
+                <div class="resource-card">
+                    <h3 class="resource-title">
+                        📋 Program Summary
+                    </h3>
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-2">Learning Objectives:</h4>
+                        <ul style="margin-left: 1.5rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                            <li>Build authentic, Scripture-based courage</li>
+                            <li>Process fear and anxiety through biblical lens</li>
+                            <li>Develop practical courage-building habits</li>
+                            <li>Create supportive community for growth</li>
+                        </ul>
+                        
+                        <h4 class="font-semibold mb-2">Target Audience:</h4>
+                        <p class="text-secondary mb-4">Adults seeking to grow in courage, especially those dealing with anxiety, fear, or life transitions. Suitable for therapy groups, church small groups, or individual study.</p>
+                        
+                        <h4 class="font-semibold mb-2">Session Structure:</h4>
+                        <p class="text-secondary">Each 20-30 minute session includes Scripture reading, gentle reflection activity, mental health companion tools, and practical action steps.</p>
+                    </div>
+                    <button class="btn btn-secondary" onclick="downloadResource('summary')">
+                        📥 Download Summary
+                    </button>
+                </div>
+
+                <div class="resource-card">
+                    <h3 class="resource-title">
+                        💬 Discussion Questions
+                    </h3>
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-2">Session 1 - The Shepherd's Call:</h4>
+                        <ul style="margin-left: 1rem; margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            <li>• What "ordinary" places is God calling you from?</li>
+                            <li>• How do you typically respond to unexpected calls or changes?</li>
+                            <li>• Where do you need courage to trust God's voice right now?</li>
+                        </ul>
+                        
+                        <h4 class="font-semibold mb-2">Session 2 - Facing the Giant:</h4>
+                        <ul style="margin-left: 1rem; margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            <li>• What "giants" are you facing that feel bigger than your faith?</li>
+                            <li>• How has God been faithful in past difficulties?</li>
+                            <li>• What small stone is God giving you for this battle?</li>
+                        </ul>
+                        
+                        <h4 class="font-semibold mb-2">General Discussion Guides:</h4>
+                        <ul style="margin-left: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            <li>• How is courage different from fearlessness?</li>
+                            <li>• What does "courage grows at human speed" mean to you?</li>
+                            <li>• How can we support each other's courage journey?</li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-secondary" onclick="downloadResource('questions')">
+                        📥 Download Questions
+                    </button>
+                </div>
+
+                <div class="resource-card">
+                    <h3 class="resource-title">
+                        🎯 Facilitator Guidelines
+                    </h3>
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-2">Creating Safe Space:</h4>
+                        <ul style="margin-left: 1rem; margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            <li>• Begin each session with confidentiality reminder</li>
+                            <li>• Allow silence and processing time</li>
+                            <li>• Validate all feelings and experiences</li>
+                            <li>• Have mental health resources available</li>
+                        </ul>
+                        
+                        <h4 class="font-semibold mb-2">Pacing Recommendations:</h4>
+                        <ul style="margin-left: 1rem; margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            <li>• One session per week for deep processing</li>
+                            <li>• Allow 45-60 minutes for group discussion</li>
+                            <li>• Encourage journal writing between sessions</li>
+                            <li>• Check in on action steps without pressure</li>
+                        </ul>
+                        
+                        <h4 class="font-semibold mb-2">Mental Health Awareness:</h4>
+                        <p class="text-secondary text-sm">This program complements but does not replace professional mental health treatment. Have local counseling resources available and encourage professional help when needed.</p>
+                    </div>
+                    <button class="btn btn-secondary" onclick="downloadResource('facilitator')">
+                        📥 Download Guidelines
+                    </button>
+                </div>
+
+                <div class="resource-card">
+                    <h3 class="resource-title">
+                        📖 Extended Resources
+                    </h3>
+                    <div class="mb-6">
+                        <h4 class="font-semibold mb-2">Recommended Reading:</h4>
+                        <ul style="margin-left: 1rem; margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            <li>• "A Heart Like David" by Beth Moore</li>
+                            <li>• "Courage: Fighting Fear with Fear" by John Piper</li>
+                            <li>• "The Anxiety and Worry Workbook" by David Clark</li>
+                            <li>• "God's Response to Mental Illness" by Stephen Grcevich</li>
+                        </ul>
+                        
+                        <h4 class="font-semibold mb-2">Scripture Memory Verses:</h4>
+                        <ul style="margin-left: 1rem; margin-bottom: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            <li>• Joshua 1:9 - "Be strong and courageous"</li>
+                            <li>• Psalm 27:1 - "The Lord is my light and salvation"</li>
+                            <li>• 2 Timothy 1:7 - "God has not given us a spirit of fear"</li>
+                            <li>• Isaiah 41:10 - "Do not fear, for I am with you"</li>
+                        </ul>
+                        
+                        <h4 class="font-semibold mb-2">Support Resources:</h4>
+                        <ul style="margin-left: 1rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            <li>• National Suicide Prevention Lifeline: 988</li>
+                            <li>• Crisis Text Line: Text HOME to 741741</li>
+                            <li>• Psychology Today therapist directory</li>
+                            <li>• Local church counseling ministries</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <button class="btn btn-secondary" onclick="goBackToOverview()">← Back to Sessions</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA/End Screen -->
+    <div id="cta-screen" class="screen cta-screen hidden">
+        <div class="cta-content">
+            <div class="cta-icon">🌟</div>
+            <h1 class="cta-title">Your Courage Journey Continues</h1>
+            <p class="cta-message">
+                You've walked with David through fear, faith, and growth. Now carry this courage into your daily life. 
+                Remember: courage grows at human speed, and God walks with you every step.
+            </p>
+            
+            <div class="cta-buttons">
+                <button class="btn btn-primary" onclick="startPrayerAudio()">
+                    🙏 Pray with Me (2-minute audio)
+                </button>
+                <button class="btn btn-gentle" onclick="applyAction()">
+                    ⚡ Apply Today's Action
+                </button>
+                <button class="btn btn-healing" onclick="donate()">
+                    ❤️ Support This Ministry
+                </button>
+            </div>
+
+            <div class="safety-notice">
+                <div class="safety-title">Remember</div>
+                <p>This provides spiritual encouragement and education—not medical advice. 
+                If you need help: Call/Text 988 (US) or use your local emergency number or trusted counselor/pastor.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-main">Made by Justin — Depths to the Heights</div>
+            <div class="footer-links">
+                <a href="https://depthstoheights.org" class="footer-link">Website</a>
+                <a href="mailto:depthstoheights@gmail.com" class="footer-link">Email</a>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=8GRE7B8C3TP2U" class="footer-link">Donate</a>
+            </div>
+            <div class="footer-donation">
+                <strong>Free to use.</strong> If this encouraged you, feel free to 
+                <a href="https://www.paypal.com/donate/?hosted_button_id=8GRE7B8C3TP2U" class="donate-link">buy me a coffee</a> 
+                to support more projects — <em>Made by Justin, Depths to the Heights</em>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Application State
+        let currentSession = 1;
+        let currentScreen = 'splash';
+        let sessionProgress = {};
+        let audioSettings = {
+            musicEnabled: true,
+            narrationEnabled: false,
+            volume: 30
+        };
+
+        // Session Data
+        const sessions = [
+            {
+                id: 1,
+                title: "The Shepherd's Call",
+                verse: "The Lord is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters, he refreshes my soul.",
+                reference: "Psalm 23:1-3",
+                context: "Before David was king, before he faced giants, he was a shepherd. In the quiet fields, God was preparing him for leadership through the simple, faithful care of sheep. Sometimes our greatest preparation happens in the ordinary places.",
+                activityPrompt: "Think about the 'ordinary' places in your life right now. What might God be preparing you for through your current circumstances, even if they feel small or unimportant?",
+                activitySuggestions: "Consider: your current job, relationships, daily routines, challenges you're facing, skills you're developing.",
+                actionTitle: "Listen for God's Voice in the Ordinary",
+                actionDescription: "This week, practice hearing God in your everyday moments.",
+                actionSteps: [
+                    "Each morning, ask God: 'What do You want to teach me today?'",
+                    "Notice one way God shows up in your routine work or responsibilities",
+                    "End each day by thanking God for His presence in the ordinary",
+                    "Write down one thing you sensed God saying to you this week"
+                ]
+            },
+            {
+                id: 2,
+                title: "Facing the Giant",
+                verse: "David said to the Philistine, 'You come against me with sword and spear and javelin, but I come against you in the name of the Lord Almighty, the God of the armies of Israel, whom you have defied.'",
+                reference: "1 Samuel 17:45",
+                context: "Goliath stood nine feet tall. David was probably a teenager with a sling. But David had spent years in the fields, learning that God's power shows up when we feel small. The giant wasn't defeated by David's strength, but by God's faithfulness.",
+                activityPrompt: "What 'giant' are you facing right now that feels bigger than your ability to handle? Write about how this challenge makes you feel, and what you wish you had the courage to do.",
+                activitySuggestions: "Your giant might be: a difficult relationship, health challenge, financial stress, career decision, or internal struggle with fear or doubt.",
+                actionTitle: "Take One Small Step Toward Your Giant",
+                actionDescription: "God often asks us to take just one step, not solve everything at once.",
+                actionSteps: [
+                    "Name your 'giant' specifically - what exactly are you afraid of?",
+                    "Identify one small action you could take this week",
+                    "Before taking action, pray: 'God, I come in Your name, not my strength'",
+                    "Take that one small step and notice how God shows up"
+                ]
+            },
+            {
+                id: 3,
+                title: "Running from Saul",
+                verse: "When I am afraid, I put my trust in you. In God, whose word I praise—in God I trust and am not afraid. What can mere mortals do to me?",
+                reference: "Psalm 56:3-4",
+                context: "David spent years hiding in caves, running from King Saul's murderous jealousy. Sometimes courage doesn't look like standing and fighting—sometimes it looks like trusting God while everything feels unsafe. David wrote some of his most honest psalms during this dark time.",
+                activityPrompt: "When have you felt unsafe or under attack (physically, emotionally, or relationally)? How did you cope? What helped you find hope when life felt dangerous or unpredictable?",
+                activitySuggestions: "Think about times of: job insecurity, relationship conflict, health scares, family tension, betrayal by someone you trusted.",
+                actionTitle: "Create Safe Spaces with God",
+                actionDescription: "When life feels unsafe, intentionally create moments of refuge with God.",
+                actionSteps: [
+                    "Find a physical space where you feel safe to pray (even a closet or car)",
+                    "Spend 5 minutes daily telling God exactly how you feel",
+                    "Read one Psalm each day, especially Psalms 3, 23, 46, or 91",
+                    "End each conversation with God by saying: 'I trust You with my safety'"
+                ]
+            },
+            {
+                id: 4,
+                title: "Sparing an Enemy",
+                verse: "The Lord forbid that I should lay a hand on the Lord's anointed. But now, take the spear and water jug that are near his head, and let's go.",
+                reference: "1 Samuel 26:11",
+                context: "David had the perfect chance to kill Saul and end his suffering. His men encouraged it. But David chose a harder courage—the courage to trust God's timing and show mercy to someone who was trying to destroy him. This is courage at its deepest level.",
+                activityPrompt: "Who is difficult for you to love or forgive right now? What would it look like to show them unexpected kindness, even if they don't deserve it?",
+                activitySuggestions: "Consider: someone who hurt you, a family member you're in conflict with, a difficult coworker, someone who betrayed your trust.",
+                actionTitle: "Choose Mercy Over Revenge",
+                actionDescription: "Practice the hardest form of courage: loving difficult people.",
+                actionSteps: [
+                    "Pray for the person who's hurt you (even if you don't feel like it)",
+                    "Look for one way to show unexpected kindness to someone difficult",
+                    "When you want to retaliate, pause and ask: 'What would mercy look like here?'",
+                    "Trust God to handle justice while you focus on love"
+                ]
+            },
+            {
+                id: 5,
+                title: "Losing Everything",
+                verse: "But David found strength in the Lord his God.",
+                reference: "1 Samuel 30:6",
+                context: "David returned to find his city burned, his family kidnapped, and his own men ready to stone him. He had lost everything and everyone was against him. In this darkest moment, David found strength in God alone. Sometimes this is where real courage begins.",
+                activityPrompt: "Describe a time when you felt like you'd lost everything or everyone was against you. How did you find the strength to keep going? What sustained you in that dark time?",
+                activitySuggestions: "Think about: major losses, times of overwhelming stress, when friends or family turned away, health crises, financial disasters.",
+                actionTitle: "Find Strength in God When Everything Fails",
+                actionDescription: "Learn to draw strength from God when human support isn't available.",
+                actionSteps: [
+                    "When feeling overwhelmed, speak to God out loud about your situation",
+                    "Remind yourself of at least one way God has been faithful in the past",
+                    "Ask God to be your strength when you feel weak",
+                    "Practice this phrase: 'God, You are my strength when I have none'"
+                ]
+            },
+            {
+                id: 6,
+                title: "Becoming King",
+                verse: "So all the elders of Israel came to the king at Hebron, and King David made a covenant with them at Hebron before the Lord, and they anointed David king over Israel.",
+                reference: "2 Samuel 5:3",
+                context: "After years of waiting, running, and trusting, David finally became king. But notice—he made a covenant with the people before God. True courage in leadership means serving others, not just gaining power. God's timing prepared David to lead with humility.",
+                activityPrompt: "What leadership opportunities or callings have you been avoiding because they feel too big or scary? What would it look like to step into these roles with courage?",
+                activitySuggestions: "Consider: taking initiative at work, leading in your family, serving at church, speaking up for what's right, starting something new.",
+                actionTitle: "Step Into Your Calling with Courage",
+                actionDescription: "Accept the leadership responsibilities God is placing before you.",
+                actionSteps: [
+                    "Identify one area where you've been avoiding leadership or responsibility",
+                    "Ask God for wisdom about how to serve, not just how to succeed",
+                    "Take one concrete step toward that leadership role this week",
+                    "Remember: you're called to serve others, not yourself"
+                ]
+            },
+            {
+                id: 7,
+                title: "The Courage to Confess",
+                verse: "I have sinned against the Lord.",
+                reference: "2 Samuel 12:13",
+                context: "After David's sin with Bathsheba, Nathan the prophet confronted him. David could have used his royal power to silence Nathan. Instead, he showed the greatest courage—the courage to admit he was wrong. Confession takes more courage than any battle.",
+                activityPrompt: "What is God asking you to confess or make right? Who do you need to apologize to? What patterns in your life need to change?",
+                activitySuggestions: "Consider: relationships you've damaged, ways you've hurt others, habits that are destructive, areas where you've compromised your values.",
+                actionTitle: "Have the Courage to Be Honest",
+                actionDescription: "Practice the hardest courage: being truthful about your failures.",
+                actionSteps: [
+                    "Confess one specific sin or failure to God with complete honesty",
+                    "If you've hurt someone, take steps to apologize and make amends",
+                    "Identify one pattern in your life that needs to change",
+                    "Ask a trusted friend to help you stay accountable to that change"
+                ]
+            }
+        ];
+
+        // Initialize Application
+        function initializeApp() {
+            setupAudioControls();
+            loadProgress();
+            
+            // Auto-progress from splash
+            setTimeout(() => {
+                navigateToScreen('hero');
+            }, 4000);
+
+            // Setup PWA
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('data:text/javascript,self.addEventListener("fetch", function(event) { event.respondWith(fetch(event.request)); });');
+            }
+        }
+
+        // Navigation
+        function navigateToScreen(screen) {
+            // Hide current screen
+            document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
+            
+            // Show new screen
+            const targetScreen = document.getElementById(`${screen}-screen`);
+            if (targetScreen) {
+                targetScreen.classList.remove('hidden');
+                currentScreen = screen;
+            }
+        }
+
+        function startCourageSchool() {
+            navigateToScreen('sessions-overview');
+        }
+
+        function showTeacherMode() {
+            navigateToScreen('teacher');
+        }
+
+        function goBackToOverview() {
+            navigateToScreen('sessions-overview');
+        }
+
+        // Session Management
+        function startSession(sessionNumber) {
+            currentSession = sessionNumber;
+            loadSessionContent(sessionNumber);
+            navigateToScreen('session');
+        }
+
+        function loadSessionContent(sessionNumber) {
+            const session = sessions[sessionNumber - 1];
+            if (!session) return;
+
+            // Update session header
+            document.getElementById('sessionTitleMain').textContent = `Session ${sessionNumber}: ${session.title}`;
+            
+            // Update progress indicator
+            updateProgressIndicator();
+
+            // Load verse content
+            document.getElementById('verseText').textContent = session.verse;
+            document.getElementById('verseReference').textContent = session.reference;
+            document.getElementById('contextExplanation').textContent = session.context;
+
+            // Load activity content
+            document.getElementById('activityPrompt').textContent = session.activityPrompt;
+            document.getElementById('activitySuggestions').textContent = session.activitySuggestions;
+
+            // Load action card content
+            document.getElementById('actionTitle').textContent = session.actionTitle;
+            document.getElementById('actionDescription').textContent = session.actionDescription;
+            
+            const actionStepsContainer = document.getElementById('actionSteps');
+            actionStepsContainer.innerHTML = '';
+            session.actionSteps.forEach((step, index) => {
+                const stepElement = document.createElement('div');
+                stepElement.className = 'action-step';
+                stepElement.innerHTML = `
+                    <div class="action-step-number">${index + 1}</div>
+                    <div class="action-step-text">${step}</div>
+                `;
+                actionStepsContainer.appendChild(stepElement);
+            });
+
+            // Update navigation buttons
+            const prevBtn = document.getElementById('prevSessionBtn');
+            const nextBtn = document.getElementById('nextSessionBtn');
+            
+            prevBtn.style.display = sessionNumber > 1 ? 'inline-flex' : 'none';
+            nextBtn.textContent = sessionNumber < 7 ? 'Next Session →' : 'Complete Journey →';
+        }
+
+        function updateProgressIndicator() {
+            const indicator = document.getElementById('progressIndicator');
+            indicator.innerHTML = '';
+            
+            for (let i = 1; i <= 7; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'progress-dot';
+                
+                if (i < currentSession) {
+                    dot.classList.add('completed');
+                } else if (i === currentSession) {
+                    dot.classList.add('active');
+                }
+                
+                indicator.appendChild(dot);
+            }
+        }
+
+        function nextSession() {
+            if (currentSession < 7) {
+                markSessionComplete(currentSession);
+                currentSession++;
+                loadSessionContent(currentSession);
+            } else {
+                markSessionComplete(currentSession);
+                navigateToScreen('cta');
+            }
+        }
+
+        function previousSession() {
+            if (currentSession > 1) {
+                currentSession--;
+                loadSessionContent(currentSession);
+            }
+        }
+
+        function markSessionComplete(sessionNumber) {
+            sessionProgress[sessionNumber] = true;
+            saveProgress();
+            
+            // Update session card visual
+            const sessionCard = document.querySelector(`[data-session="${sessionNumber}"]`);
+            if (sessionCard) {
+                sessionCard.classList.add('completed');
+                const progressBar = sessionCard.querySelector('.session-progress');
+                if (progressBar) {
+                    progressBar.style.width = '100%';
+                }
+            }
+        }
+
+        // Depression Companion Functions
+        function showCompanionTab(tabName) {
+            // Update tabs
+            document.querySelectorAll('.companion-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.companion-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(`${tabName}Content`).classList.add('active');
+        }
+
+        function startBreathPrayer() {
+            const circle = document.querySelector('.breath-circle');
+            const instructions = document.querySelector('.breath-instructions');
+            
+            let count = 0;
+            const totalCycles = 15; // 2 minutes worth
+            
+            function breatheCycle() {
+                if (count >= totalCycles) {
+                    circle.textContent = 'Complete';
+                    instructions.innerHTML = 'Take a moment to notice how you feel.<br>God is with you.';
+                    return;
+                }
+                
+                // Inhale phase
+                circle.textContent = 'Breathe In';
+                circle.style.background = 'rgba(244, 63, 94, 0.2)';
+                
+                setTimeout(() => {
+                    // Exhale phase
+                    circle.textContent = 'Breathe Out';
+                    circle.style.background = 'rgba(244, 63, 94, 0.1)';
+                    
+                    setTimeout(() => {
+                        count++;
+                        breatheCycle();
+                    }, 2000);
+                }, 2000);
+            }
+            
+            instructions.innerHTML = 'Breathe in: "God, give me courage"<br>Breathe out: "I trust in You"';
+            breatheCycle();
+        }
+
+        // Audio Functions
+        function setupAudioControls() {
+            const musicToggle = document.getElementById('musicToggle');
+            const narrationToggle = document.getElementById('narrationToggle');
+            const volumeControl = document.getElementById('volumeControl');
+            const backgroundAudio = document.getElementById('backgroundAudio');
+
+            musicToggle.addEventListener('click', () => {
+                audioSettings.musicEnabled = !audioSettings.musicEnabled;
+                musicToggle.classList.toggle('active', audioSettings.musicEnabled);
+                
+                if (audioSettings.musicEnabled) {
+                    playBackgroundMusic();
+                } else {
+                    backgroundAudio.pause();
+                }
+            });
+
+            narrationToggle.addEventListener('click', () => {
+                audioSettings.narrationEnabled = !audioSettings.narrationEnabled;
+                narrationToggle.classList.toggle('active', audioSettings.narrationEnabled);
+            });
+
+            volumeControl.addEventListener('input', (e) => {
+                audioSettings.volume = e.target.value;
+                backgroundAudio.volume = audioSettings.volume / 100;
+                document.getElementById('prayerAudio').volume = audioSettings.volume / 100;
+            });
+
+            // Set initial volume
+            backgroundAudio.volume = audioSettings.volume / 100;
+            musicToggle.classList.add('active');
+        }
+
+        function playBackgroundMusic() {
+            const backgroundAudio = document.getElementById('backgroundAudio');
+            if (audioSettings.musicEnabled) {
+                backgroundAudio.play().catch(e => {
+                    console.log('Audio autoplay blocked by browser');
+                });
+            }
+        }
+
+        function playVerseNarration() {
+            if (audioSettings.narrationEnabled) {
+                // In a real implementation, this would play audio narration of the verse
+                showNotification('Narration would play here in the full version');
+            } else {
+                showNotification('Enable narration in the audio controls to listen');
+            }
+        }
+
+        function startPrayerAudio() {
+            const prayerAudio = document.getElementById('prayerAudio');
+            prayerAudio.currentTime = 0;
+            prayerAudio.play().catch(e => {
+                showNotification('Audio not available - please pray silently');
+            });
+            
+            // Show prayer text
+            showNotification('Prayer audio started. Close your eyes and follow along.', 'success');
+        }
+
+        // CTA Functions
+        function applyAction() {
+            const session = sessions[currentSession - 1];
+            if (session) {
+                showNotification(`This week's courage step: ${session.actionTitle}`);
+            }
+        }
+
+        function donate() {
+            window.open('https://www.paypal.com/donate/?hosted_button_id=8GRE7B8C3TP2U', '_blank');
+        }
+
+        // Progress Management
+        function saveProgress() {
+            try {
+                localStorage.setItem('courageSchoolProgress', JSON.stringify(sessionProgress));
+            } catch (error) {
+                console.log('Could not save progress');
+            }
+        }
+
+        function loadProgress() {
+            try {
+                const saved = localStorage.getItem('courageSchoolProgress');
+                if (saved) {
+                    sessionProgress = JSON.parse(saved);
+                    
+                    // Update session cards
+                    Object.keys(sessionProgress).forEach(sessionNumber => {
+                        if (sessionProgress[sessionNumber]) {
+                            const sessionCard = document.querySelector(`[data-session="${sessionNumber}"]`);
+                            if (sessionCard) {
+                                sessionCard.classList.add('completed');
+                                const progressBar = sessionCard.querySelector('.session-progress');
+                                if (progressBar) {
+                                    progressBar.style.width = '100%';
+                                }
+                            }
+                        }
+                    });
+                }
+            } catch (error) {
+                console.log('Could not load progress');
+            }
+        }
+
+        // Teacher Resources
+        function downloadResource(type) {
+            let content = '';
+            let filename = '';
+
+            if (type === 'summary') {
+                content = `Courage School: David's Way - Program Summary
+
+Overview:
+A 7-session journey through David's story to build authentic, Scripture-based courage. Designed for individuals or groups seeking to grow in courage, especially those dealing with anxiety, fear, or life transitions.
+
+Learning Objectives:
+• Build authentic, Scripture-based courage
+• Process fear and anxiety through a biblical lens
+• Develop practical courage-building habits
+• Create supportive community for growth
+
+Session Structure (20-30 minutes each):
+1. Scripture & Context - Biblical foundation with audio option
+2. Gentle Reflection - Processing activity with journal prompts
+3. Healing Companion - Mental health tools (breath prayer, gratitude, affirmations)
+4. Courage Step - Practical weekly action
+
+Target Audience:
+Adults seeking courage growth, therapy groups, church small groups, individual study
+
+Sessions Overview:
+1. The Shepherd's Call - Trusting God's voice in ordinary places
+2. Facing the Giant - Moving forward when fear feels bigger than faith
+3. Running from Saul - Finding courage during unsafe seasons
+4. Sparing an Enemy - The courage to show mercy
+5. Losing Everything - Finding strength in God when support fails
+6. Becoming King - Stepping into calling with humility
+7. The Courage to Confess - The hardest courage: admitting wrongs
+
+Mental Health Integration:
+Includes breath prayer exercises, gratitude practices, and Scripture affirmations. Complements professional treatment, does not replace it.
+
+Made by Justin, Depths to the Heights
+https://depthstoheights.org`;
+                filename = 'courage-school-summary.txt';
+            } else if (type === 'questions') {
+                content = `Courage School: David's Way - Discussion Questions
+
+Session 1 - The Shepherd's Call:
+• What "ordinary" places is God calling you from?
+• How do you typically respond to unexpected calls or changes?
+• Where do you need courage to trust God's voice right now?
+• How has God used mundane circumstances to prepare you for bigger things?
+
+Session 2 - Facing the Giant:
+• What "giants" are you facing that feel bigger than your faith?
+• How has God been faithful in past difficulties?
+• What small stone is God giving you for this battle?
+• How do you distinguish between wise caution and fear-based avoidance?
+
+Session 3 - Running from Saul:
+• When have you felt unsafe or under attack?
+• How do you create safe spaces when life feels unpredictable?
+• What does it mean to trust God when you can't trust circumstances?
+• How can community support us during dangerous seasons?
+
+Session 4 - Sparing an Enemy:
+• Who is difficult for you to love or forgive right now?
+• What would unexpected kindness look like in your difficult relationships?
+• How do we balance justice and mercy?
+• When has someone shown you mercy you didn't deserve?
+
+Session 5 - Losing Everything:
+• Describe a time when you felt like you'd lost everything
+• How did you find strength to keep going?
+• What does it mean to find strength in God alone?
+• How can we support others who are in their darkest moments?
+
+Session 6 - Becoming King:
+• What leadership opportunities have you been avoiding?
+• How do we step into calling with humility rather than pride?
+• What's the difference between serving and just succeeding?
+• Where is God asking you to take initiative?
+
+Session 7 - The Courage to Confess:
+• What is God asking you to confess or make right?
+• Why is honesty about failure so difficult?
+• How do we balance accountability with shame?
+• What would healing look like in relationships you've damaged?
+
+General Discussion Guides:
+• How is courage different from fearlessness?
+• What does "courage grows at human speed" mean to you?
+• How can we support each other's courage journey?
+• What role does community play in building courage?
+• How do we handle setbacks in our growth?
+
+Made by Justin, Depths to the Heights
+https://depthstoheights.org`;
+                filename = 'courage-school-discussion-questions.txt';
+            } else if (type === 'facilitator') {
+                content = `Courage School: David's Way - Facilitator Guidelines
+
+Creating Safe Space:
+• Begin each session with confidentiality reminder
+• Allow silence and processing time - don't rush
+• Validate all feelings and experiences without judgment
+• Have mental health resources available
+• Be aware of triggers around trauma, abuse, depression
+• Create clear boundaries about what can be shared
+
+Pacing Recommendations:
+• One session per week allows for deep processing
+• Group sessions: 45-60 minutes with discussion
+• Allow extra time for the Depression Companion module
+• Encourage journal writing between sessions
+• Check in on action steps without creating pressure
+• Be flexible with emotional processing needs
+
+Mental Health Awareness:
+• This program complements but does not replace professional mental health treatment
+• Have local counseling resources readily available
+• Watch for signs of severe depression, anxiety, or suicidal ideation
+• Encourage professional help when needed
+• Know when to refer vs. when to support
+• Be familiar with crisis resources (988 Suicide Prevention Lifeline)
+
+Group Dynamics:
+• Keep groups small (6-8 people maximum)
+• Establish ground rules about sharing and listening
+• Manage dominating personalities gently
+• Draw out quieter participants without forcing
+• Address conflicts that arise with grace
+• Maintain focus on growth, not just problems
+
+Facilitator Self-Care:
+• Process your own courage journey alongside participants
+• Have your own support system and supervision
+• Know your limits and when to seek help
+• Model vulnerability appropriately
+• Take care of your emotional health
+
+Session-Specific Notes:
+• Session 3 (Running from Saul) may trigger trauma responses
+• Session 5 (Losing Everything) requires extra emotional support
+• Session 7 (Confession) may bring up shame - emphasize grace
+• Always end with hope and God's faithfulness
+
+Resources to Have Available:
+• National Suicide Prevention Lifeline: 988
+• Crisis Text Line: Text HOME to 741741
+• Local counseling services and contact information
+• Church pastoral care contacts
+• Group member emergency contacts
+
+Made by Justin, Depths to the Heights
+https://depthstoheights.org`;
+                filename = 'courage-school-facilitator-guidelines.txt';
+            }
+
+            if (content) {
+                const blob = new Blob([content], { type: 'text/plain' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                a.click();
+                URL.revokeObjectURL(url);
+            }
+        }
+
+        // Utility Functions
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background: ${type === 'error' ? '#ef4444' : '#10b981'};
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 0.5rem;
+                z-index: 10000;
+                font-weight: 600;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+                max-width: 400px;
+                text-align: center;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 4000);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeApp);
+
+        // Auto-start background music after user interaction
+        document.addEventListener('click', () => {
+            playBackgroundMusic();
+        }, { once: true });
+    </script>
+</body>
+</html>
